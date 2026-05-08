@@ -1,0 +1,706 @@
+/* GitBook Theme for Brutus.finance */
+/* Based on the official Brutus.finance website color palette */
+/* Theme: CryptoZone by DexignZone — adapted for GitBook */
+
+/* ============================================
+   CSS VARIABLES (Brutus.finance Brand Colors)
+   ============================================ */
+
+:root {
+    --color-primary: #9467FE;
+    --color-primary-hover: #7034FE;
+    --color-primary-dark: #3d01cb;
+    --color-secondary: #362465;
+    --color-body-text: #7E87BF;
+    --color-border: #CFDBED;
+    --color-bg: #F0F5FF;
+    --color-grey: #F4F6FA;
+    --color-heading: #1C2E9E;
+    --color-white: #ffffff;
+    --color-accent-1: #ff403e;
+    --color-accent-2: #ff811b;
+    --color-accent-purple: #3d11a8;
+    --color-accent-blue: #06a3f9;
+    --gradient-primary: linear-gradient(to right, #ff403e 0%, #ff811b 100%);
+    --gradient-secondary: linear-gradient(to right, #391aa6 0%, #06a3f9 100%);
+    --gradient-header: linear-gradient(to right, #9467FE 0%, #362465 100%);
+    --font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'Fira Code', 'Consolas', 'Monaco', monospace;
+    --border-radius: 8px;
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+body {
+    font-family: var(--font-family);
+    color: var(--color-body-text);
+    background: var(--color-bg);
+    line-height: 1.8;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-heading);
+    font-weight: 600;
+    font-family: var(--font-family);
+}
+
+h1 { font-size: 2.2em; margin-top: 0; }
+h2 { font-size: 1.7em; margin-top: 40px; }
+h3 { font-size: 1.3em; margin-top: 32px; }
+h4 { font-size: 1.1em; margin-top: 24px; }
+h5 { font-size: 1em; margin-top: 20px; }
+h6 { font-size: 0.95em; margin-top: 16px; }
+
+/* ============================================
+   HEADER — Transparent with gradient
+   ============================================ */
+
+.book-header {
+    background: transparent !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 16px 0;
+}
+
+.book-header .book-brand {
+    color: var(--color-white) !important;
+    font-weight: 700;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.book-header .book-brand:hover {
+    color: var(--color-primary) !important;
+}
+
+.book-nav {
+    background: transparent !important;
+}
+
+.book-nav a {
+    color: rgba(255, 255, 255, 0.85) !important;
+    padding: 8px 16px !important;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.book-nav a:hover,
+.book-nav a.active {
+    color: var(--color-primary) !important;
+    background: rgba(148, 103, 254, 0.15) !important;
+    text-decoration: none;
+}
+
+/* ============================================
+   BOOK BODY WRAPPER — Gradient banner at top
+   ============================================ */
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    z-index: 9999;
+}
+
+.book-body {
+    background: var(--color-bg) !important;
+    position: relative;
+}
+
+/* ============================================
+   SIDEBAR / SUMMARY
+   ============================================ */
+
+.book-summary {
+    background: var(--color-white) !important;
+    border-right: 1px solid var(--color-border) !important;
+    box-shadow: 2px 0 20px rgba(148, 103, 254, 0.05);
+}
+
+.book-summary .book-summary-title {
+    background: var(--gradient-header) !important;
+    color: var(--color-white) !important;
+    padding: 18px 24px !important;
+    font-size: 1.1em !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(148, 103, 254, 0.3);
+}
+
+.book-summary a {
+    color: var(--color-heading) !important;
+    padding: 8px 16px !important;
+    border-radius: var(--border-radius) !important;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.book-summary a:hover {
+    background: rgba(148, 103, 254, 0.06) !important;
+    color: var(--color-primary) !important;
+    text-decoration: none;
+}
+
+.book-summary .active {
+    background: rgba(148, 103, 254, 0.1) !important;
+    color: var(--color-primary) !important;
+    font-weight: 700;
+    border-left: 3px solid var(--color-primary);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.book-summary .book-summary-item.expandable > a {
+    font-weight: 700;
+    color: var(--color-primary-dark) !important;
+}
+
+.book-summary .indent-1 a {
+    padding-left: 32px !important;
+}
+
+.book-summary .indent-2 a {
+    padding-left: 48px !important;
+}
+
+/* ============================================
+   PAGE CONTENT
+   ============================================ */
+
+.markdown-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px !important;
+}
+
+.markdown-section h1 {
+    color: var(--color-heading) !important;
+    font-size: 2.2em !important;
+    margin-bottom: 16px !important;
+    padding-bottom: 16px !important;
+    border-bottom: 3px solid var(--color-primary) !important;
+    position: relative;
+}
+
+.markdown-section h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+    margin-top: 12px;
+}
+
+.markdown-section h2 {
+    color: var(--color-primary-dark) !important;
+    font-size: 1.6em !important;
+    padding-bottom: 8px !important;
+    border-bottom: 2px solid var(--color-border) !important;
+}
+
+.markdown-section h2::before {
+    content: '🟣 ';
+}
+
+.markdown-section h3 {
+    color: var(--color-secondary) !important;
+}
+
+.markdown-section h3::before {
+    content: '🔷 ';
+}
+
+.markdown-section p {
+    margin-bottom: 16px !important;
+    line-height: 1.8;
+}
+
+/* ============================================
+   CODE BLOCKS
+   ============================================ */
+
+.markdown-section pre {
+    background: #1a1a2e !important;
+    border: 1px solid #2d2d4a !important;
+    border-radius: var(--border-radius) !important;
+    overflow-x: auto !important;
+    box-shadow: var(--shadow) !important;
+    margin: 20px 0 !important;
+}
+
+.markdown-section code {
+    font-family: var(--font-mono) !important;
+    background: rgba(148, 103, 254, 0.08) !important;
+    color: var(--color-primary-dark) !important;
+    padding: 2px 8px !important;
+    border-radius: 4px !important;
+    font-size: 0.9em !important;
+    border: 1px solid var(--color-border) !important;
+}
+
+.markdown-section pre code {
+    background: none !important;
+    color: #a9b7c6 !important;
+    padding: 0 !important;
+    border: none !important;
+    font-size: 0.88em !important;
+}
+
+/* ============================================
+   TABLES — Purple gradient header
+   ============================================ */
+
+.markdown-section table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 24px 0 !important;
+    border-radius: var(--border-radius) !important;
+    overflow: hidden !important;
+    box-shadow: var(--shadow) !important;
+    font-size: 0.95em !important;
+}
+
+.markdown-section th {
+    background: var(--gradient-header) !important;
+    color: var(--color-white) !important;
+    font-weight: 600 !important;
+    padding: 14px 16px !important;
+    text-align: left !important;
+    border: none !important;
+    font-size: 0.95em !important;
+}
+
+.markdown-section td {
+    padding: 12px 16px !important;
+    border-bottom: 1px solid var(--color-border) !important;
+    background: var(--color-white) !important;
+    vertical-align: top !important;
+}
+
+.markdown-section tr:last-child td {
+    border-bottom: none !important;
+}
+
+.markdown-section tr:hover td {
+    background: var(--color-grey) !important;
+}
+
+.markdown-section tr:nth-child(even) {
+    background: #f8f9fc !important;
+}
+
+.markdown-section tr:nth-child(even):hover td {
+    background: #eef0f8 !important;
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
+
+.markdown-section a {
+    color: var(--color-primary) !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+    border-bottom: 2px solid transparent !important;
+    font-weight: 500;
+}
+
+.markdown-section a:hover {
+    color: var(--color-primary-hover) !important;
+    border-bottom-color: var(--color-primary) !important;
+    text-decoration: none !important;
+}
+
+/* ============================================
+   BLOCKQUOTES — Styled with purple left border
+   ============================================ */
+
+.markdown-section blockquote {
+    border-left: 4px solid var(--color-primary) !important;
+    background: linear-gradient(90deg, rgba(148, 103, 254, 0.06), rgba(54, 36, 101, 0.03)) !important;
+    padding: 16px 20px !important;
+    margin: 20px 0 !important;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0 !important;
+    font-style: italic;
+    color: #5a6399 !important;
+}
+
+.markdown-section blockquote p {
+    margin-bottom: 0 !important;
+    font-size: 1.05em !important;
+}
+
+/* ============================================
+   LISTS
+   ============================================ */
+
+.markdown-section ul,
+.markdown-section ol {
+    margin: 16px 0 !important;
+    padding-left: 28px !important;
+}
+
+.markdown-section li {
+    margin-bottom: 8px !important;
+    line-height: 1.7;
+}
+
+.markdown-section li p {
+    margin-bottom: 0 !important;
+}
+
+.markdown-section li::marker {
+    color: var(--color-primary);
+}
+
+/* ============================================
+   ADMONITIONS
+   ============================================ */
+
+.markdown-section .admonition {
+    border-radius: var(--border-radius) !important;
+    padding: 16px 20px !important;
+    margin: 20px 0 !important;
+    border-left: 4px solid !important;
+    box-shadow: var(--shadow) !important;
+}
+
+.markdown-section .admonition-title {
+    font-weight: 700 !important;
+    margin-top: 0 !important;
+    font-size: 1.05em !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Warning */
+.markdown-section .admonition.warning {
+    background: #fff8f0 !important;
+    border-color: #f39c12 !important;
+}
+.markdown-section .admonition.warning .admonition-title {
+    color: #b8760a !important;
+}
+
+/* Info */
+.markdown-section .admonition.info {
+    background: #f0f5ff !important;
+    border-color: var(--color-primary) !important;
+}
+.markdown-section .admonition.info .admonition-title {
+    color: var(--color-primary-dark) !important;
+}
+
+/* Tip */
+.markdown-section .admonition.tip {
+    background: #e8f8e8 !important;
+    border-color: var(--color-success, #27ae60) !important;
+}
+.markdown-section .admonition.tip .admonition-title {
+    color: #155724 !important;
+}
+
+/* Danger */
+.markdown-section .admonition.danger {
+    background: #fde8ec !important;
+    border-color: #e74c3c !important;
+}
+.markdown-section .admonition.danger .admonition-title {
+    color: #922b21 !important;
+}
+
+/* ============================================
+   FOOTER — Dark purple gradient
+   ============================================ */
+
+.book-footer {
+    background: linear-gradient(135deg, #1a0a3e, #362465, #1a0a3e) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    padding: 32px 48px !important;
+    border-top: 4px solid var(--color-primary) !important;
+}
+
+.book-footer a {
+    color: var(--color-primary) !important;
+    text-decoration: underline;
+}
+
+.book-footer a:hover {
+    color: #b89aff !important;
+}
+
+/* Footer copyright */
+.markdown-section .copyright-text {
+    font-size: 0.85em !important;
+}
+
+/* ============================================
+   SEARCH BAR
+   ============================================ */
+
+.book-search .search-input {
+    border: 2px solid var(--color-border) !important;
+    border-radius: 20px !important;
+    padding: 8px 16px !important;
+    font-size: 0.95em !important;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background: var(--color-white) !important;
+}
+
+.book-search .search-input:focus {
+    border-color: var(--color-primary) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(148, 103, 254, 0.15) !important;
+}
+
+.book-search .search-results {
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--shadow) !important;
+    overflow: hidden;
+}
+
+.book-search .search-results .search-result {
+    padding: 10px 16px !important;
+    border-bottom: 1px solid var(--color-border) !important;
+    transition: all 0.2s ease;
+}
+
+.book-search .search-results .search-result:last-child {
+    border-bottom: none !important;
+}
+
+.book-search .search-results .search-result:hover {
+    background: rgba(148, 103, 254, 0.05) !important;
+}
+
+.book-search .search-results .search-result.selected {
+    background: rgba(148, 103, 254, 0.1) !important;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.markdown-section .btn {
+    background: var(--gradient-primary) !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 10px 24px !important;
+    border-radius: 25px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    box-shadow: 0 2px 8px rgba(255, 64, 62, 0.3);
+    font-size: 0.95em;
+}
+
+.markdown-section .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(255, 64, 62, 0.4);
+    text-decoration: none !important;
+    color: #fff !important;
+}
+
+.markdown-section .btn-secondary {
+    background: var(--gradient-secondary) !important;
+    box-shadow: 0 2px 8px rgba(54, 36, 101, 0.3);
+}
+
+.markdown-section .btn-secondary:hover {
+    box-shadow: 0 4px 16px rgba(54, 36, 101, 0.4);
+}
+
+/* ============================================
+   PROGRESS & STATUS INDICATORS
+   ============================================ */
+
+.markdown-section .text-green {
+    color: var(--color-success, #27ae60) !important;
+}
+
+.markdown-section .text-red {
+    color: #e74c3c !important;
+}
+
+.markdown-section .text-primary {
+    color: var(--color-primary) !important;
+}
+
+.markdown-section .text-muted {
+    color: var(--color-body-text) !important;
+}
+
+/* ============================================
+   SEPARATOR / HR
+   ============================================ */
+
+.markdown-section hr {
+    border: none !important;
+    height: 2px !important;
+    background: var(--gradient-primary) !important;
+    margin: 32px 0 !important;
+    border-radius: 1px;
+}
+
+/* ============================================
+   CODE COPY BUTTON
+   ============================================ */
+
+.markdown-section .copy-btn {
+    background: var(--color-primary) !important;
+    color: var(--color-white) !important;
+    border: none !important;
+    border-radius: var(--border-radius) !important;
+    padding: 4px 12px !important;
+    cursor: pointer;
+    font-size: 0.85em !important;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.markdown-section .copy-btn:hover {
+    background: var(--color-primary-hover) !important;
+    transform: scale(1.02);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .markdown-section {
+        padding: 24px 20px !important;
+    }
+
+    .markdown-section h1 {
+        font-size: 1.7em !important;
+    }
+
+    .markdown-section h2 {
+        font-size: 1.35em !important;
+    }
+
+    .markdown-section table {
+        font-size: 0.82em !important;
+    }
+
+    .book-header {
+        background: var(--color-secondary) !important;
+        position: relative;
+    }
+
+    .book-header .book-brand {
+        text-shadow: none;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    .book-header,
+    .book-summary,
+    .book-nav {
+        display: none !important;
+    }
+
+    .markdown-section {
+        padding: 0 !important;
+        max-width: 100% !important;
+    }
+
+    .markdown-section pre {
+        background: #f5f5f5 !important;
+        border: 1px solid #ddd !important;
+    }
+
+    .markdown-section code {
+        background: #f5f5f5 !important;
+    }
+
+    body::before {
+        display: none;
+    }
+
+    .book-footer {
+        background: #333 !important;
+    }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.markdown-section > :first-child {
+    animation: fadeInUp 0.4s ease;
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+
+.markdown-section::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.markdown-section::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+.markdown-section::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 4px;
+    opacity: 0.6;
+}
+
+.markdown-section::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-hover);
+    opacity: 1;
+}

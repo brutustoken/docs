@@ -8,31 +8,15 @@
     "summary": "SUMMARY.md"
   },
   "styles": {
-    "website": "styles/website.styl"
+    "website": "styles/website.css"
   },
-  "plugins": [
-    "back-to-top-button",
-    "copy-code-button",
-    "splitter",
-    "-lunr",
-    "-search",
-    "search-pro"
-  ],
-  "pluginsConfig": {
-    "search-pro": {
-      "cutWord": true
-    },
-    "splitter": {
-      "availWidth": 0,
-      "minWidth": 600
-    }
-  },
+
   "variables": {
     "version": "2.7.1",
     "year": "2026"
   },
   "output": {
-    "dir": "_book",
+    "dir": "docs",
     "file": "index.html",
     "kindlegen": ""
   },

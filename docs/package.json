@@ -4,10 +4,7 @@
   "description": "Documentación oficial de Brutus.finance - DeFi en la blockchain de Tron",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "honkit build . docs",
-    "preview": "honkit serve",
-    "predeploy": "honkit build",
     "start": "honkit serve",
     "dev": "honkit serve"
   },
