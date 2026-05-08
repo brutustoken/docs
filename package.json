@@ -1,0 +1,55 @@
+{
+  "name": "brutus-finance-docs",
+  "version": "2.7.1",
+  "description": "Documentación oficial de Brutus.finance - DeFi en la blockchain de Tron",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "honkit build .",
+    "preview": "honkit serve",
+    "predeploy": "honkit build",
+    "start": "honkit serve"
+  },
+  "keywords": [
+    "brutus",
+    "finance",
+    "defi",
+    "tron",
+    "blockchain",
+    "documentation",
+    "gitbook",
+    "brut-token",
+    "staking",
+    "nft",
+    "energy",
+    "rental"
+  ],
+  "author": "Brutus Finance Team <administrador@brutus.finance> (https://brutus.finance)",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@honkitworks/honkit": "^6.0.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": "https://github.com/brutustoken/docs/issues"
+  },
+  "homepage": "https://brutus.finance",
+  "files": [
+    "pages/",
+    "styles/",
+    "README.md",
+    "SUMMARY.md",
+    "GLOSSARY.md",
+    "CONTRIBUTING.md",
+    "gitbook.json",
+    "_book/"
+  ]
+}
